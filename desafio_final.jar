@@ -1,0 +1,53 @@
+package br.com.vainaweb.backend.desafiofinalT2;
+public class Calculadora {
+	public static void main(String[] args) {}
+
+	public static double adicao(double... numeros) {
+		double soma = 0;
+		for (double numero : numeros) {soma += numero;}
+		return soma;
+	}
+
+	public static double subtracao(double... numeros) {
+		double dif = numeros[0];
+		for (int i = 1; i < numeros.length; i++) {dif -= numeros[i];}
+		return dif;
+	}
+
+	public static double multiplicacao(double... numeros) {
+		double produto = 1;
+
+		for (double numero : numeros) {produto *= numero;}
+		return produto;
+	}
+
+	public static double divisao(double divisor, double dividendo) {
+		return (divisor / dividendo);
+	}
+
+	public static double areaQuad(double ladoQuadrado) {
+		double area = ladoQuadrado * ladoQuadrado;
+		return area;
+	}
+
+	public static double perimetro(double ladoMaior, double ladoMenor) {
+		double perimetro = (ladoMaior * 2) + (ladoMenor * 2);
+		return perimetro;
+	}
+	public static double volume(double raio) {
+		double pi = Math.PI;
+		double volume = (4.0 / 3.0) * pi * Math.pow(raio, 3);
+		return volume;
+	}
+
+	public static double jurosSimples(double valor, double taxa, int meses) {
+		double valorFinal = valor + (valor * (taxa / 100) * meses);
+		return valorFinal;
+	}
+
+	public static double jurosCompostos(double valor, double taxa, double meses) {
+		taxa = taxa / 100;
+		double valorFinal = valor * Math.pow(1 + taxa, meses);
+		return valorFinal;
+	}
+}
